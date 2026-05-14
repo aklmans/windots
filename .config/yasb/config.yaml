@@ -35,7 +35,10 @@ bars:
       center: [
         "clock",
       ]
-      right: []
+      right: [
+        "cpu",
+        "memory"
+      ]
 widgets:
   home:
     type: "yasb.home.HomeWidget"
@@ -137,6 +140,36 @@ widgets:
       alignment: 'center'
       direction: 'down'
       distance: 6
+  cpu:
+    type: "yasb.cpu.CpuWidget"
+    options:
+      label: "CPU {info[percent][total]}%"
+      label_alt: "CPU {info[histograms][cpu_percent]}"
+      update_interval: 2000
+      hide_decimal: true
+      callbacks:
+        on_left: "toggle_label"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+      cpu_thresholds:
+        low: 25
+        medium: 60
+        high: 85
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      label: "RAM {virtual_mem_percent}%"
+      label_alt: "RAM {virtual_mem_used}/{virtual_mem_total}"
+      update_interval: 5000
+      hide_decimal: true
+      callbacks:
+        on_left: "toggle_label"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+      memory_thresholds:
+        low: 25
+        medium: 60
+        high: 85
   taskbar:
     type: "yasb.taskbar.TaskbarWidget"
     options:

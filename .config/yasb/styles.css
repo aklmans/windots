@@ -244,6 +244,54 @@
     margin: 0 5px 0 15px;
 }
 
+/* CPU */
+
+.cpu-widget .widget-container {
+    background-color: #24273a;
+    border-radius: 15px;
+    height: 35px;
+}
+.cpu-widget .widget-container .label {
+    padding: 0 12px;
+    color: var(--blue);
+}
+.cpu-widget .widget-container .label.status-low {
+    color: var(--green);
+}
+.cpu-widget .widget-container .label.status-medium {
+    color: var(--yellow);
+}
+.cpu-widget .widget-container .label.status-high {
+    color: var(--peach);
+}
+.cpu-widget .widget-container .label.status-critical {
+    color: var(--red);
+}
+
+/* Memory */
+
+.memory-widget .widget-container {
+    background-color: #24273a;
+    border-radius: 15px;
+    height: 35px;
+}
+.memory-widget .widget-container .label {
+    padding: 0 12px;
+    color: var(--lavender);
+}
+.memory-widget .widget-container .label.status-low {
+    color: var(--green);
+}
+.memory-widget .widget-container .label.status-medium {
+    color: var(--yellow);
+}
+.memory-widget .widget-container .label.status-high {
+    color: var(--peach);
+}
+.memory-widget .widget-container .label.status-critical {
+    color: var(--red);
+}
+
 /* Calendar */
 
 .calendar {
