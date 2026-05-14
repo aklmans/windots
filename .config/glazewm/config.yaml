@@ -1,7 +1,7 @@
 general:
   # Commands to run when the WM has started (e.g. to run a script or launch
   # another application). Here we are running a batch script to start Zebar.
-  startup_commands: ["shell-exec C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Yasb.lnk"]
+  startup_commands: ["shell-exec C:\\Users\\Shadow\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Scoop Apps\\YASB.lnk"]
 
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: false
@@ -71,26 +71,26 @@ window_behavior:
 
 workspaces:
   - name: "1"
-    display_name: ""
+    display_name: "Warp"
     keep_alive: true
   - name: "2"
-    display_name: ""
+    display_name: "Claude"
     keep_alive: true
   - name: "3"
-    display_name: ""
+    display_name: "IDEA"
     keep_alive: true
   - name: "4"
-    display_name: ""
+    display_name: "Edge"
   - name: "5"
-    display_name: ""
+    display_name: "Lark"
   - name: "6"
-    display_name: ""
+    display_name: "Typora"
   - name: "7"
-    display_name: ""
+    display_name: "7"
   - name: "8"
-    display_name: ""
+    display_name: "8"
   - name: "9"
-    display_name: ""
+    display_name: "9"
 
 window_rules:
   - commands: ["ignore"]
@@ -109,6 +109,31 @@ window_rules:
 
       # Ignore all Linux GUI host windows
       - window_process: { equals: "msrdc" }
+
+  # App-to-workspace mapping (desktop 1-6).
+  - commands: ["move --workspace 1"]
+    match:
+      - window_process: { regex: "(?i)^warp$" }
+
+  - commands: ["move --workspace 2"]
+    match:
+      - window_process: { regex: "(?i)^claude$" }
+
+  - commands: ["move --workspace 3"]
+    match:
+      - window_process: { regex: "(?i)^idea64$" }
+
+  - commands: ["move --workspace 4"]
+    match:
+      - window_process: { regex: "(?i)^msedge$" }
+
+  - commands: ["move --workspace 5"]
+    match:
+      - window_process: { regex: "(?i)^lark$" }
+
+  - commands: ["move --workspace 6"]
+    match:
+      - window_process: { regex: "(?i)^typora$" }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
@@ -220,23 +245,33 @@ keybindings:
 
   # Change focus to a workspace defined in `workspaces` config.
   - commands: ["focus --workspace 1"]
-    bindings: ["alt+1"]
+    bindings: ["ctrl+alt+1"]
   - commands: ["focus --workspace 2"]
-    bindings: ["alt+2"]
+    bindings: ["ctrl+alt+2"]
   - commands: ["focus --workspace 3"]
-    bindings: ["alt+3"]
+    bindings: ["ctrl+alt+3"]
   - commands: ["focus --workspace 4"]
-    bindings: ["alt+4"]
+    bindings: ["ctrl+alt+4"]
   - commands: ["focus --workspace 5"]
-    bindings: ["alt+5"]
+    bindings: ["ctrl+alt+5"]
   - commands: ["focus --workspace 6"]
-    bindings: ["alt+6"]
+    bindings: ["ctrl+alt+6"]
   - commands: ["focus --workspace 7"]
-    bindings: ["alt+7"]
+    bindings: ["ctrl+alt+7"]
   - commands: ["focus --workspace 8"]
-    bindings: ["alt+8"]
+    bindings: ["ctrl+alt+8"]
   - commands: ["focus --workspace 9"]
-    bindings: ["alt+9"]
+    bindings: ["ctrl+alt+9"]
+
+  # Cycle workspaces.
+  - commands: ["focus --prev-workspace"]
+    bindings: ["ctrl+alt+left"]
+  - commands: ["focus --next-workspace"]
+    bindings: ["ctrl+alt+right"]
+
+  # Open Task View.
+  - commands: ['shell-exec explorer "shell:::{3080F90E-D7AD-11D9-BD98-0000947B0257}"']
+    bindings: ["ctrl+alt+up", "ctrl+alt+down"]
 
   # Move the focused window's parent workspace to a monitor in a given direction.
   - commands: ["move-workspace --direction left"]
@@ -287,7 +322,7 @@ keybindings:
     bindings: ["alt+b"]
 
   # Open VSCode
-  - commands: ["shell-exec C:\\Users\\ashis\\Desktop\\VSCode.lnk"]
+  - commands: ["shell-exec C:\\Users\\Shadow\\Desktop\\VSCode.lnk"]
     bindings: ["alt+c"]
 
   # Open Zed
@@ -295,19 +330,19 @@ keybindings:
     bindings: ["alt+z"]
 
   # Open Obisian
-  - commands: ["shell-exec C:\\Users\\ashis\\Desktop\\Obsidian.lnk"]
+  - commands: ["shell-exec C:\\Users\\Shadow\\Desktop\\Obsidian.lnk"]
     bindings: ["alt+o"]
 
   # Open Spotify
-  - commands: ["shell-exec C:\\Users\\ashis\\Desktop\\Spotify.lnk"]
+  - commands: ["shell-exec C:\\Users\\Shadow\\Desktop\\Spotify.lnk"]
     bindings: ["alt+m"]
 
   # Open Discord
-  - commands: ["shell-exec C:\\Users\\ashis\\Desktop\\Discord.lnk"]
+  - commands: ["shell-exec C:\\Users\\Shadow\\Desktop\\Discord.lnk"]
     bindings: ["alt+d"]
 
   # Open WhatsApp
-  - commands: ["shell-exec C:\\Users\\ashis\\Desktop\\WhatsApp.lnk"]
+  - commands: ["shell-exec C:\\Users\\Shadow\\Desktop\\WhatsApp.lnk"]
     bindings: ["alt+w"]
 
   # Open Neovim
@@ -331,7 +366,7 @@ keybindings:
     bindings: ["alt+a"]
 
   # Open GitHub
-  - commands: ["shell-exec cmd /c start zen -new-window https://github.com/ashish0kumar"]
+  - commands: ["shell-exec cmd /c start zen -new-window https://github.com/aklmans"]
     bindings: ["alt+g"]
 
   # Restart yasb

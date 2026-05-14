@@ -102,20 +102,23 @@
     background-color: #24273a;
     border-radius: 15px;
     height: 35px;
+    padding: 0 8px;
 }
 .glazewm-workspaces .ws-btn {
     background-color: transparent;
     border: none;
     outline: none;
-    padding: 0px 4px;
+    padding: 0px 10px;
+    margin: 0 4px;
 }
 .glazewm-workspaces .ws-btn.active_populated {
-    color: var(--mauve);
+    color: var(--base);
     background-color: var(--mauve);
-    width: 26px;
-    height: 13px;
-    border-radius: 6px;
-    margin: 0px 3px 0 7px;
+    width: auto;
+    height: 22px;
+    border-radius: 11px;
+    margin: 0px 8px;
+    padding: 0 12px;
     border: none;
 }
 .glazewm-workspaces .ws-btn.active_empty {

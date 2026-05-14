@@ -30,19 +30,12 @@ bars:
     widgets:
       left: [
         "home",
-        "glazewm_workspaces",
-        "media"
+        "glazewm_workspaces"
       ]
       center: [
         "clock",
       ]
-      right: [
-        "taskbar",
-        "wifi",
-        "volume",
-        "battery",
-        "power_menu"
-      ]
+      right: []
 widgets:
   home:
     type: "yasb.home.HomeWidget"
@@ -50,9 +43,9 @@ widgets:
       label: "<span>\ue62a</span>"
       menu_list:
       - { title: "User Home", path: "~" }
-      - { title: "Download", path: "C:\\Users\\ashis\\Downloads" }
-      - { title: "Documents", path: "C:\\Users\\ashis\\Documents" }
-      - { title: "Pictures", path: "C:\\Users\\ashis\\Pictures" }
+      - { title: "Download", path: "C:\\Users\\Shadow\\Downloads" }
+      - { title: "Documents", path: "C:\\Users\\Shadow\\Documents" }
+      - { title: "Pictures", path: "C:\\Users\\Shadow\\Pictures" }
       system_menu: true
       power_menu: true
       blur: true
@@ -238,7 +231,7 @@ widgets:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
       label: "<span>\udb80\udee9</span>"
-      image_path: "C:\\Users\\ashis\\windots\\walls"
+      image_path: "C:\\Users\\Shadow\\workspace\\projects\\windots\\walls"
       change_automatically: false
       update_interval: 60
       gallery:
