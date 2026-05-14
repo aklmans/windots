@@ -47,8 +47,9 @@ widgets:
       menu_list:
       - { title: "User Home", path: "~" }
       - { title: "Download", path: "C:\\Users\\Shadow\\Downloads" }
-      - { title: "Documents", path: "C:\\Users\\Shadow\\Documents" }
-      - { title: "Pictures", path: "C:\\Users\\Shadow\\Pictures" }
+      - { title: "Workspace", path: "C:\\Users\\Shadow\\workspace" }
+      - { title: "Projects", path: "C:\\Users\\Shadow\\workspace\\projects" }
+      - { title: "Notes", path: "C:\\Users\\Shadow\\workspace\\notes" }
       system_menu: true
       power_menu: true
       blur: true
