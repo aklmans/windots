@@ -71,20 +71,29 @@ window_behavior:
 
 workspaces:
   - name: "1"
-    display_name: "Warp"
+    display_name: "1 Warp"
+    bind_to_monitor: 0
     keep_alive: true
   - name: "2"
-    display_name: "Claude"
+    display_name: "2 Claude"
+    bind_to_monitor: 0
     keep_alive: true
   - name: "3"
-    display_name: "IDEA"
+    display_name: "3 IDEA"
+    bind_to_monitor: 0
     keep_alive: true
   - name: "4"
-    display_name: "Edge"
+    display_name: "4 Edge"
+    bind_to_monitor: 1
+    keep_alive: true
   - name: "5"
-    display_name: "Lark"
+    display_name: "5 Lark"
+    bind_to_monitor: 1
+    keep_alive: true
   - name: "6"
-    display_name: "Typora"
+    display_name: "6 Typora"
+    bind_to_monitor: 1
+    keep_alive: true
   - name: "7"
     display_name: "7"
   - name: "8"
@@ -243,30 +252,30 @@ keybindings:
   - commands: ["focus --recent-workspace"]
     bindings: ["alt+`"]
 
-  # Change focus to a workspace defined in `workspaces` config.
-  - commands: ["focus --workspace 1"]
+  # Change focus by workspace order (left->right monitor layout + workspace order).
+  - commands: ['shell-exec --hide-window powershell -NoProfile -ExecutionPolicy Bypass -File "C:\\Users\\Shadow\\.glzr\\glazewm\\focus-workspace-by-order.ps1" 1']
     bindings: ["ctrl+alt+1"]
-  - commands: ["focus --workspace 2"]
+  - commands: ['shell-exec --hide-window powershell -NoProfile -ExecutionPolicy Bypass -File "C:\\Users\\Shadow\\.glzr\\glazewm\\focus-workspace-by-order.ps1" 2']
     bindings: ["ctrl+alt+2"]
-  - commands: ["focus --workspace 3"]
+  - commands: ['shell-exec --hide-window powershell -NoProfile -ExecutionPolicy Bypass -File "C:\\Users\\Shadow\\.glzr\\glazewm\\focus-workspace-by-order.ps1" 3']
     bindings: ["ctrl+alt+3"]
-  - commands: ["focus --workspace 4"]
+  - commands: ['shell-exec --hide-window powershell -NoProfile -ExecutionPolicy Bypass -File "C:\\Users\\Shadow\\.glzr\\glazewm\\focus-workspace-by-order.ps1" 4']
     bindings: ["ctrl+alt+4"]
-  - commands: ["focus --workspace 5"]
+  - commands: ['shell-exec --hide-window powershell -NoProfile -ExecutionPolicy Bypass -File "C:\\Users\\Shadow\\.glzr\\glazewm\\focus-workspace-by-order.ps1" 5']
     bindings: ["ctrl+alt+5"]
-  - commands: ["focus --workspace 6"]
+  - commands: ['shell-exec --hide-window powershell -NoProfile -ExecutionPolicy Bypass -File "C:\\Users\\Shadow\\.glzr\\glazewm\\focus-workspace-by-order.ps1" 6']
     bindings: ["ctrl+alt+6"]
-  - commands: ["focus --workspace 7"]
+  - commands: ['shell-exec --hide-window powershell -NoProfile -ExecutionPolicy Bypass -File "C:\\Users\\Shadow\\.glzr\\glazewm\\focus-workspace-by-order.ps1" 7']
     bindings: ["ctrl+alt+7"]
-  - commands: ["focus --workspace 8"]
+  - commands: ['shell-exec --hide-window powershell -NoProfile -ExecutionPolicy Bypass -File "C:\\Users\\Shadow\\.glzr\\glazewm\\focus-workspace-by-order.ps1" 8']
     bindings: ["ctrl+alt+8"]
-  - commands: ["focus --workspace 9"]
+  - commands: ['shell-exec --hide-window powershell -NoProfile -ExecutionPolicy Bypass -File "C:\\Users\\Shadow\\.glzr\\glazewm\\focus-workspace-by-order.ps1" 9']
     bindings: ["ctrl+alt+9"]
 
   # Cycle workspaces.
-  - commands: ["focus --prev-workspace"]
+  - commands: ["focus --prev-active-workspace-on-monitor"]
     bindings: ["ctrl+alt+left"]
-  - commands: ["focus --next-workspace"]
+  - commands: ["focus --next-active-workspace-on-monitor"]
     bindings: ["ctrl+alt+right"]
 
   # Open Task View.
@@ -282,6 +291,12 @@ keybindings:
     bindings: ["alt+shift+d"]
   - commands: ["move-workspace --direction down"]
     bindings: ["alt+shift+s"]
+
+  # Move current workspace to a target monitor (dual-screen quick actions).
+  - commands: ["move-workspace --direction left"]
+    bindings: ["ctrl+alt+shift+1"]
+  - commands: ["move-workspace --direction right"]
+    bindings: ["ctrl+alt+shift+2"]
 
   # Move focused window to a workspace defined in `workspaces` config.
   - commands: ["move --workspace 1", "focus --workspace 1"]
