@@ -115,6 +115,8 @@ window_rules:
       - window_process: { equals: "PowerToys.PowerAccent" }
       - window_process: { equals: "Lively" }
         window_class: { regex: "HwndWrapper*" }
+      - window_process: { regex: "(?i)^flow\\.launcher$" }
+      - window_process: { regex: "(?i)^windhawk$" }
 
       # Ignore all Linux GUI host windows
       - window_process: { equals: "msrdc" }
